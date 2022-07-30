@@ -1,6 +1,6 @@
 import { tmpdir } from 'os';
 import { resolve } from 'path';
-import express, { response } from 'express';
+import express from 'express';
 import puppeteer, { PaperFormat, PDFOptions } from 'puppeteer';
 
 const port = +(process.env.PORT || 8080);
@@ -26,6 +26,11 @@ server.get('/', (_, response) => {
 
 server.get('/pdf', (request, response) => {
     pdfRequestId += 1;
+
+    if (!request.query.url) {
+        response.send('No URL');
+        return;
+    }
 
     (async () => {
         const path = resolve(tempDir, `${pdfRequestId}.pdf`);
