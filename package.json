@@ -1,0 +1,23 @@
+{
+  "name": "pdf-generator",
+  "version": "0.0.1",
+  "description": "PDF generation service.",
+  "main": "bin/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istvan-xyz/pdf-generator.git"
+  },
+  "keywords": [
+    "pdf",
+    "generation"
+  ],
+  "author": "István Antal <istvan@antal.xyz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/istvan-xyz/pdf-generator/issues"
+  },
+  "homepage": "https://github.com/istvan-xyz/pdf-generator#readme"
+}
