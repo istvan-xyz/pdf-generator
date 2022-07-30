@@ -1,6 +1,7 @@
 import { tmpdir } from 'os';
 import { resolve } from 'path';
 import express from 'express';
+import morgan from 'morgan';
 import puppeteer, { PaperFormat, PDFOptions } from 'puppeteer';
 
 const port = +(process.env.PORT || 8080);
@@ -19,6 +20,8 @@ const server = express();
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+
+server.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
 server.get('/', (_, response) => {
     response.send('Ok');
